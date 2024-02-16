@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alpha Clash</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <!-- main container -->
+    <main class="bg-[#010313] min-h-screen bg-[url(images/background.png)] bg-no-repeat bg-center bg-contain flex justify-center items-center">
+        <!-- start window -->
+        <section id="start-window" class="">
+            <div class="flex flex-col items-center text-white space-y-9">
+                <h1 class="font-anton text-8xl font-normal">ALPHABET CLASH</h1>
+                <p class="text-base font-medium">Unleash Your Keyboard Kung Fu : Press “Enter” to Play</p>
+                <button onclick="play()" class="text-[#010313] bg-white font-poppins text-base px-5 py-3 font-semibold rounded-md">Play Now</button>
+            </div>
+        </section>
+
+        <!-- game window -->
+        <section id="game-window" class="space-y-16 hidden">
+            <!-- display -->
+            <div class="w-[800px] h-72 backdrop-blur rounded-xl border-[12px] border-gray-800 bg-[#ffffffb2] flex flex-col items-center justify-center relative">
+                <p class="absolute -top-1 pb-2 pl-4 pr-4 text-sm font-poppins font-medium text-white rounded-b-lg bg-gray-800">
+                    Don't watch keyboard while playing...</p>
+                <span id="display-letter" class="font-poppins text-[#010313] font-semibold text-8xl uppercase"></span>
+            </div>
+
+            <!-- keyboard -->
+            <div class="font-inter font-black">
+                <div class="flex justify-center gap-2 my-2 w-full">
+                    <kbd id="q" class="kbd">q</kbd>
+                    <kbd id="w" class="kbd">w</kbd>
+                    <kbd id="e" class="kbd">e</kbd>
+                    <kbd id="r" class="kbd">r</kbd>
+                    <kbd id="t" class="kbd">t</kbd>
+                    <kbd id="y" class="kbd">y</kbd>
+                    <kbd id="u" class="kbd">u</kbd>
+                    <kbd id="i" class="kbd">i</kbd>
+                    <kbd id="o" class="kbd">o</kbd>
+                    <kbd id="p" class="kbd">p</kbd>
+                </div>
+                <div class="flex justify-center gap-2 my-2 w-full">
+                    <kbd id="a" class="kbd">a</kbd>
+                    <kbd id="s" class="kbd">s</kbd>
+                    <kbd id="d" class="kbd">d</kbd>
+                    <kbd id="f" class="kbd">f</kbd>
+                    <kbd id="g" class="kbd">g</kbd>
+                    <kbd id="h" class="kbd">h</kbd>
+                    <kbd id="j" class="kbd">j</kbd>
+                    <kbd id="k" class="kbd">k</kbd>
+                    <kbd id="l" class="kbd">l</kbd>
+                </div>
+                <div class="flex justify-center gap-2 my-2 w-full">
+                    <kbd id="z" class="kbd">z</kbd>
+                    <kbd id="x" class="kbd">x</kbd>
+                    <kbd id="c" class="kbd">c</kbd>
+                    <kbd id="v" class="kbd">v</kbd>
+                    <kbd id="b" class="kbd">b</kbd>
+                    <kbd id="n" class="kbd">n</kbd>
+                    <kbd id="m" class="kbd">m</kbd>
+                    <kbd id="/" class="kbd">/</kbd>
+                </div>
+            </div>
+
+            <!-- life & score -->
+            <div class="flex justify-between">
+                <!-- life -->
+                <div class="bg-fuchsia-800 text-white flex items-center gap-2 text-lg font-inter px-7 py-2 rounded-full"> life
+                    <img src="images/life.svg" alt="">
+                    <span id="life">5</span>
+                </div>
+
+                <!-- score -->
+                <div class="bg-violet-900 text-white flex items-center gap-2 text-lg font-inter px-7 py-2 rounded-full"> Score
+                    <img src="images/score.svg" alt="">
+                    <span id="score">0</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- result window -->
+        <section id="result-window" class="hidden">
+            <div class="flex flex-col justify-center items-center space-y-4 bg-violet-700 p-9 rounded-xl border border-[#ffffff33]">
+                <h1 class="text-white font-poppins font-extrabold text-5xl">Score : <span id="final-score" class="font-medium">0</span></h1>
+                <button onclick="play()" class="text-[#010313] bg-white font-poppins text-base px-5 py-3 font-bold rounded-md">Play Again</button>
+                <p class="text-white font-poppins font-medium">Practice will make you Pro</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
