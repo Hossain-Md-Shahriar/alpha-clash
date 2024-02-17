@@ -1,4 +1,5 @@
-
+// Utility functions
+// ----------------------------------------------------------- //
 // function to generate a random letter
 function randomLetter() {
     const letter = 'abcdefghijklmnopqrstuvwxyz/';
@@ -6,7 +7,6 @@ function randomLetter() {
     const randomIndex = Math.round(Math.random() * 26);
     return arrLetter[randomIndex];
 }
-
 
 
 
@@ -122,7 +122,7 @@ document.addEventListener('keyup', event => {
     }
     else {
         const life = parseInt(getInnerText('life')) - 1;
-
+        
         if (life === 0) {
             setInnerText('score', 0);
             setInnerText('life', 5);
