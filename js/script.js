@@ -3,7 +3,7 @@
 function randomLetter() {
     const letter = 'abcdefghijklmnopqrstuvwxyz/';
     const arrLetter = letter.split('');
-    const randomIndex = Math.round(Math.random()*26);
+    const randomIndex = Math.round(Math.random() * 26);
     return arrLetter[randomIndex];
 }
 
@@ -84,23 +84,35 @@ function setInnerText(id, value) {
 
 // ------------------------------------------------------------------ //
 
+function continueGame() {
+    const letter = randomLetter();
+    setInnerText('display-letter', letter);
+    setBackgroundColor(letter);
+}
+
+function play() {
+    hideElement('start-window');
+    showElement('game-window');
+    hideElement('result-window');
+    continueGame();
+}
+
 document.addEventListener('keypress', event => {
     const currLetter = getInnerText('display-letter').toLowerCase();
-    
-    if(event.key === currLetter) {
-        removeBackgroundColor(currLetter);
+
+    if (event.key === currLetter) {
         setGreen(currLetter);
     }
     else {
-        removeBackgroundColor(currLetter);
         setRed(currLetter);
     }
+
+
 })
 
 document.addEventListener('keyup', event => {
     const currLetter = getInnerText('display-letter').toLowerCase();
-
-    if(event.key === currLetter) {
+    if (event.key === currLetter) {
         const score = parseInt(getInnerText('score')) + 1;
         setInnerText('score', score);
         setInnerText('final-score', score);
@@ -111,7 +123,7 @@ document.addEventListener('keyup', event => {
     else {
         const life = parseInt(getInnerText('life')) - 1;
 
-        if(life === 0) {
+        if (life === 0) {
             setInnerText('score', 0);
             setInnerText('life', 5);
             removeBackgroundColor(currLetter);
@@ -125,19 +137,5 @@ document.addEventListener('keyup', event => {
             removeRed(currLetter);
             continueGame();
         }
-
     }
 })
-
-function continueGame() {
-    const letter = randomLetter();
-    setInnerText('display-letter', letter);
-    setBackgroundColor(letter);
-}
-
-function play() {
-    hideElement('start-window');
-    showElement('game-window');
-    hideElement('result-window');
-    continueGame();
-}
