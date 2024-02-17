@@ -43,13 +43,13 @@ function removeBackgroundColor(id) {
 // function to add green color
 function setGreen(id) {
     const element = document.getElementById(id);
-    element.classList.add('bg-green-500');
+    element.classList.add('bg-green-400');
 }
 
 // function to remove green color
 function removeGreen(id) {
     const element = document.getElementById(id);
-    element.classList.remove('bg-green-500');
+    element.classList.remove('bg-green-400');
 }
 
 
@@ -58,13 +58,13 @@ function removeGreen(id) {
 // function to add red color
 function setRed(id) {
     const element = document.getElementById(id);
-    element.classList.add('bg-red-500');
+    element.classList.add('bg-red-600');
 }
 
 // function to remove red color
 function removeRed(id) {
     const element = document.getElementById(id);
-    element.classList.remove('bg-red-500');
+    element.classList.remove('bg-red-600');
 }
 
 
